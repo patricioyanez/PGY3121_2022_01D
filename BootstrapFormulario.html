@@ -55,12 +55,12 @@
               </div>
             </div>
         </nav>
-        <div class="row">
+        <div class="row mb-5">
             <div class="text-center">
                 <h3>Ingreso de personas</h3>
             </div>        
         </div>
-        <div class="row">
+        <div class="row mb-2">
             <div class="col-md-2 offset-md-2">
                 Rut        
             </div>
@@ -77,7 +77,7 @@
                 title="Ingrese el Digito verificador del rut">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-2">
             <div class="col-md-2 offset-md-2">
                 Nombre        
             </div>
@@ -88,7 +88,7 @@
                 title="Ingrese su nombre">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-2">
             <div class="col-md-2 offset-md-2">
                 Apellido        
             </div>
@@ -99,18 +99,66 @@
                 title="Ingrese su apellido">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2 offset-md-2">
-                Nacimiento        
+        <div class="row mb-2">
+            <div class="col-12 col-md-2 offset-md-2">
+                Nacimiento         
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
                 <input type="date" name="txtNacimiento" 
                 class="txtNacimiento form-control" 
                 title="Ingrese la fecha de nacimiento">
             </div>
         </div>
-
-        <!-- Estado civil y nivel academico -->
+        <div class="row mb-2">
+          <div class="col-12 col-md-2 offset-md-2">
+              Estado Civil         
+          </div>
+          <div class="col-12 col-md-6">
+              <input type="radio" name="rdoEstadoCivil" 
+              class="rdoEstadoCivil" title="Ingrese su actual estado civil"
+              value="1">Soltero &nbsp;
+              <input type="radio" name="rdoEstadoCivil" 
+              class="rdoEstadoCivil" title="Ingrese su actual estado civil"
+              value="2">Casado &nbsp;
+              <input type="radio" name="rdoEstadoCivil" 
+              class="rdoEstadoCivil" title="Ingrese su actual estado civil"
+              value="3">Viudo &nbsp;
+              <input type="radio" name="rdoEstadoCivil" 
+              class="rdoEstadoCivil" title="Ingrese su actual estado civil"
+              value="4">Divorciado &nbsp;
+              <input type="radio" name="rdoEstadoCivil" 
+              class="rdoEstadoCivil" title="Ingrese su actual estado civil"
+              value="5">AUC &nbsp;
+          </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-12 col-md-2 offset-md-2">
+            Nivel académico         
+        </div>
+        <div class="col-12 col-md-6">
+            <select name="cmbNivelAcademico" class="cmbNivelAcademico form-control">
+              <option value="0">Seleccionar...</option>
+              <option value="1">Básica</option>
+              <option value="2">Media</option>
+              <option value="3">Superior</option>
+              <option value="4">Magíster</option>
+              <option value="5">Doctor</option>
+            </select>
+        </div>
     </div>
+    <div class="row">
+      <div class="col-md-2 offset-md-2">
+          Opciones        
+      </div>
+      <div class="col-md-6">
+          <input type="submit" name="btnLimpiar" 
+          class="btnLimpiar btn btn-outline-secondary float-end"
+          title="Limpia el formulario de información que este escrita" value="Limpiar">
+          <button type="button" class="btn btn-success float-end">Listar</button>
+          <button type="button" class="btn btn-danger float-end">Grabar</button>
+      </div>
+  </div>
+  
+  </div>
 </body>
 </html>
