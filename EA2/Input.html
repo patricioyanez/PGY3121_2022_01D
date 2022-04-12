@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Etiquetas</title>
+</head>
+<body>
+    <form action="Input.html" method="get">
+        
+        <label>Nombre</label>
+        <input name="txtNombre"  autofocus> <br>
+        <label>Apellido</label>
+        <input type="text" name="txtApellido" maxlength="20" size="18">
+        <input type="text" name="txtDefuncion" disabled value="fasdf">
+        <input type="text" name="txtDefuncion2" readonly=readonly value="Hola">
+        <input type="text" name="txtDireccion" placeholder="Ej: av. Vespucio 1501, Cerrillos">
+        <input type="text" name="txtDireccion2" title="Ingrese la direccion actual de trabajo">
+        <br>
+        <label>Edad</label>
+        <input type="number" min="0" max="120" step="2">
+        <input type="hidden" name="oculto" value="12">
+        <h1>Animé favorito</h1>
+        <input type="checkbox" name="chkAnime" value="1">Evangelion
+        <input type="checkbox" name="chkAnime" value="2">Ghost in the shell
+        <input type="checkbox" name="chkAnime" value="3">Shingeki no kyojin
+        <input type="checkbox" name="chkAnime" value="4">One Pushman
+        <input type="checkbox" name="chkAnime" value="5">One Peace
+        <h2>Estado civil</h2>
+        <input type="radio" name="rdoEstadoCivil" value="1">Soltero
+        <input type="radio" name="rdoEstadoCivil" value="2">Casado
+        <input type="radio" name="rdoEstadoCivil" value="3">Viudo
+        <input type="radio" name="rdoEstadoCivil" value="4">Divorciado
+        <input type="radio" name="rdoEstadoCivil" value="5">AUC
+        <br>
+        <input type="date" name="txtFecha">
+        <input type="time" name="txtHoraActual">
+        <input type="date" name="txtFecha">
+        <input type="week" name="txtSemana">
+
+        <br>
+        <input type="search">
+        <input type="range" name="txtRango" min="0" max="100">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    
+</body>
+</html>
