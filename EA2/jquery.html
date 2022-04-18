@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ONG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ONG Ayuda a un peludo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Recurso</a>
+                        </li>
+                    </ul>          
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="text-center">Registro de usuarios</h1>
+        
+        <div class="row mt-5">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Nombre
+            </div>
+            <div class="col-12 col-sm-5">
+                <input name="txtNombre" class="txtNombre form-control" placeholder="Ingrese su nombre completo">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Email
+            </div>
+            <div class="col-12 col-sm-5">
+                <input name="txtEmail" class="txtEmail form-control" placeholder="Ingrese su Email completo">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Rut o PasaPorte
+            </div>
+            <div class="col-12 col-sm-5">
+                <input name="txtRut" class="txtRut form-control" placeholder="Ingrese su rut o pasaporte">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Nro Télefono
+            </div>
+            <div class="col-12 col-sm-5">
+                <input name="txtTelefono" class="txtTelefono form-control" placeholder="Ingrese su fono o celular">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Ciudad de residencia
+            </div>
+            <div class="col-12 col-sm-5">
+                <input name="txtCiudad" class="txtCiudad form-control" placeholder="Ingrese su Ciudad">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Comentario
+            </div>
+            <div class="col-12 col-sm-5">
+                <textarea class="form-control" cols="20" rows="5" placeholder="Comentanos"></textarea>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 col-sm-2 offset-sm-3">
+                Opciones
+            </div>
+            <div class="col-12 col-sm-5">
+                <button class="btnLimpiar btn btn-secondary">Limpiar</button>
+                <button class="btnEnviar  btn btn-danger">Enviar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
