@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+    <script>
+        function sumar()
+        {
+            let n1 = document.getElementById("numero1").value;
+            let n2 = document.getElementById("numero2").value;
+            let total = parseInt(n1) + parseInt(n2);
+            let mensaje = "El total es: " + total; 
+            alert(mensaje);
+            document.getElementById("lblMensaje").innerHTML = mensaje;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="numero1">
+    <input type="number" id="numero2"><br>
+    <input type="button" id="btnSumar" onclick="sumar()" value="sumar"><br>
+    <label id="lblMensaje"></label>
+</body>
+</html>
