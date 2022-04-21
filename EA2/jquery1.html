@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrar Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() // public static void main
+        {
+            //alert("Hola");
+            $(".btnAceptar").click(function()
+            {
+                let nombre = $(".txtNombre").val();
+
+                alert(nombre);
+
+                $(".txtNombre").val("Hola " + nombre);
+            });
+
+
+        }) ;   
+    </script>
+
+
+</head>
+<body>
+    <input type="text" name="txtNombre" class="txtNombre">
+    <button class="btnAceptar">Aceptar</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrar Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function()
+        {
+            $(".btnAceptar").click(function()
+            {
+                let nombre = $(".txtNombre").val(); // captura de datos
+                if(!nombre) // si no hay datos da falso
+                {
+                    alert("Falta el nombre");
+                    $(".txtNombre").focus();
+                }
+                else
+                {
+                    alert("Datos ingresados:\nnombre: " + nombre);
+                    $(".txtNombre").val(''); // limpiar caja
+                    $(".txtNombre").focus();
+                }
+            });
+
+
+        }) ;   
+    </script>
+
+
+</head>
+<body>
+    <input type="text" name="txtNombre" class="txtNombre" autofocus>
+    <button class="btnAceptar">Aceptar</button>
+</body>
+</html>
