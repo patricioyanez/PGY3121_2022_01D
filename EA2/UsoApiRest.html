@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de API REST</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function()
+        {
+            $(".comidas").hide();
+            $(".btnEnviar").click(function()
+            {
+                $.get("https://www.themealdb.com/api/json/v1/1/categories.php",
+                function(data)
+                {
+                    $.each(data.categories, function(i, item){
+                        $(".comidas").append("<tr><td>" + item.idCategory + "</td>" +
+                                                    "<td><img src='" + item.strCategoryThumb + "'></td>" +
+                                                    "<td>" + item.strCategory + "</td>" +
+                                                    "<td>" + item.strCategoryDescription + "</td></tr>"
+                            );
+                    })
+                    $(".comidas").show();
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <input type="button" class="btnEnviar" value="Enviar">
+    <table class="comidas" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Imagen</th>
+            <th>categoría</th>
+            <th>Descripción</th>
+        </tr>        
+    </table>
+</body>
+</html>
