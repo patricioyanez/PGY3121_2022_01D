@@ -11,6 +11,7 @@
 {% endblock %}
 {% block contenido %}
     <form method="post">
+        {% csrf_token %} 
         <div class="row mt-4">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
             <div class="col-12 col-md-5">
