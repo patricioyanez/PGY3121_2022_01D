@@ -8,6 +8,7 @@
 {% endblock %}
 {% block titulo %}
     <h1 class="text-center mt-5">CRUD para Categoría</h1>
+    <h2>{{ btn }}</h2>
 {% endblock %}
 {% block contenido %}
     <form method="post">
@@ -15,7 +16,8 @@
         <div class="row mt-4">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
             <div class="col-12 col-md-5">
-                <input type="text" name="txtNombre" class="form-control">
+                <input type="hidden"    name="txtId" class="form-control">
+                <input type="text"      name="txtNombre" class="form-control">
             </div>
         </div>        
         <div class="row">
@@ -27,11 +29,10 @@
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Opciones</div>
             <div class="col-12 col-md-5">
-                <input type="submit" class="btn btn-primary" value="Guardar">
-                <input type="submit" class="btn btn-warning" value="Modificar">
-                <input type="submit" class="btn btn-success" value="Listar">
-                <input type="submit" class="btn btn-danger" value="Eliminar">
-                <input type="submit" class="btn btn-outline-secondary" value="Limpiar">
+                <input type="submit" class="btn btn-primary"           name="btnGuardar"    value="Guardar">
+                <input type="submit" class="btn btn-success"           name="btnListar"     value="Listar">
+                <input type="submit" class="btn btn-danger"            name="btnEliminar"   value="Eliminar">
+                <input type="submit" class="btn btn-outline-secondary" name="btnLimpiar"    value="Limpiar">
             </div>
         </div>
     </form>
