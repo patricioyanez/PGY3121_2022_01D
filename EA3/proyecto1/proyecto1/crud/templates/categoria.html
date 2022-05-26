@@ -7,17 +7,36 @@
     C.R.U.D. categoria
 {% endblock %}
 {% block titulo %}
-    <h1>CRUD para Categoría</h1>
+    <h1 class="text-center mt-5">CRUD para Categoría</h1>
 {% endblock %}
 {% block contenido %}
-<input type="text" name="txtNombre" id="">
+    <form method="post">
+        <div class="row mt-4">
+            <div class="col-12 col-md-2 offset-md-3">Nombre</div>
+            <div class="col-12 col-md-5">
+                <input type="text" name="txtNombre" class="form-control">
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-12 col-md-2 offset-md-3">Activo</div>
+            <div class="col-12 col-md-5">
+                <input type="checkbox" name="chkActivo" class="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-2 offset-md-3">Opciones</div>
+            <div class="col-12 col-md-5">
+                <input type="submit" class="btn btn-primary" value="Guardar">
+                <input type="submit" class="btn btn-warning" value="Modificar">
+                <input type="submit" class="btn btn-success" value="Listar">
+                <input type="submit" class="btn btn-danger" value="Eliminar">
+                <input type="submit" class="btn btn-outline-secondary" value="Limpiar">
+            </div>
+        </div>
+    </form>
+
 
 {% endblock %}
 {% block listado %}
- <table border="1">
-     <tr>
-         <td>Nombre</td>
-         <td>Activo</td>
-     </tr>
- </table>
+ 
 {% endblock %}
