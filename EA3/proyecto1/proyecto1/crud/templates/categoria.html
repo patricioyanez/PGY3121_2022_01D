@@ -1,5 +1,6 @@
 {# comentario si es requerido #}
 {% extends "plantillaBase.html" %}
+{% load static %}
 
 {# definir contenidos de los bloques declarados en la plantilla base #}
 
@@ -8,22 +9,28 @@
 {% endblock %}
 {% block titulo %}
     <h1 class="text-center mt-5">CRUD para Categoría</h1>
-    <h2>{{ btn }}</h2>
+{% if mensaje %}
+    <h2>
+        {{ mensaje }}
+    </h2>
+{% endif %}
+
 {% endblock %}
 {% block contenido %}
+{#    <script src="{% static 'JavaScript/categoria.js' %}"></script> #}
     <form method="post">
         {% csrf_token %} 
         <div class="row mt-4">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
             <div class="col-12 col-md-5">
-                <input type="hidden"    name="txtId" class="form-control">
-                <input type="text"      name="txtNombre" class="form-control">
+                <input type="hidden"    name="txtId"        class="txtId form-control"     value="{{ item.id }}">
+                <input type="text"      name="txtNombre"    class="txtNombre form-control" value="{{ item.nombre }}">
             </div>
         </div>        
         <div class="row">
             <div class="col-12 col-md-2 offset-md-3">Activo</div>
             <div class="col-12 col-md-5">
-                <input type="checkbox" name="chkActivo" class="">
+                <input type="checkbox" name="chkActivo" class="chkActivo" value="1" {% if item.activo %}{{ 'checked' }}{% endif %}>
             </div>
         </div>
         <div class="row">
@@ -32,7 +39,7 @@
                 <input type="submit" class="btn btn-primary"           name="btnGuardar"    value="Guardar">
                 <input type="submit" class="btn btn-success"           name="btnListar"     value="Listar">
                 <input type="submit" class="btn btn-danger"            name="btnEliminar"   value="Eliminar">
-                <input type="submit" class="btn btn-outline-secondary" name="btnLimpiar"    value="Limpiar">
+                <a href="{% url 'categoria' %}" class="btn btn-outline-secondary btnLimpiar" >Limpiar</a>
             </div>
         </div>
     </form>
@@ -40,5 +47,25 @@
 
 {% endblock %}
 {% block listado %}
- 
+{% if listado %}
+<div class="row justify-content-center">
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Activo</th>
+            <th>Seleccionar</th>
+        </tr>
+    {% for fila in listado %}
+        <tr>
+            <td>{{ fila.id }}</td>
+            <td>{{ fila.nombre }}</td>
+            <td>{{ fila.activo }}</td>
+            <td><a href="{% url 'categoria' %}/{{ fila.id }}/">Seleccionar</a></td>
+        </tr>
+
+    {% endfor %}
+        </table>
+{% endif %}
+</div>
 {% endblock %}
