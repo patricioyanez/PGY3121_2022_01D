@@ -9,17 +9,23 @@
 {% endblock %}
 {% block titulo %}
     <h1 class="text-center mt-5">CRUD para Categoría</h1>
-{% if mensaje %}
-    <div class="alert alert-danger" role="alert">
-        {{ mensaje }}
-    </div>
+{% endblock %}
+{% block mensajes %}
+{% if exito %}
+    <div class="alert alert-success" role="alert">
+    {{ exito }}
+  </div> 
 {% endif %}
-
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+    {{ error }}
+  </div> 
+{% endif %}
 {% endblock %}
 {% block contenido %}
-{#    #}
-    <script src="{% static 'JavaScript/categoria.js' %}"></script> 
-    <form method="post" action="{% url 'categoria' %}">
+{# #} 
+<script src="{% static 'JavaScript/categoria.js' %}"></script> 
+    <form method="POST" action="{% url 'categoria' %}">
         {% csrf_token %} 
         <div class="row mt-4">
             <div class="col-12 col-md-2 offset-md-3">Nombre</div>
@@ -40,7 +46,7 @@
                 <input type="submit" class="btn btn-primary btnGuardar" name="btnGuardar"    value="Guardar">
                 <input type="submit" class="btn btn-success btnListar"  name="btnListar"     value="Listar">
                 <input type="submit" class="btn btn-danger btnEliminar" name="btnEliminar"   value="Eliminar">
-                <a href="{% url 'categoria' %}" class="btn btn-outline-secondary btnLimpiar" >Limpiar</a>
+                <a href="#" class="btn btn-outline-secondary btnLimpiar" >Limpiar</a>
             </div>
         </div>
     </form>
