@@ -1,0 +1,36 @@
+Usar Django 
+1.- pip install djangorestframework
+2.- crear una app  py manage.py startapp nombreAPP  
+    el nombre de la app es api
+    py manage.py startapp api
+3.- agregar app y api rest en settings, sección INSTALLED_APPS 
+
+    'rest_framework',
+    'api',
+
+4.- ir a la app api y crear el archivo serializers.py al mismo nivel
+    que views, tests,models, etc.
+
+5.- escribir en el archivo serializers.py:
+    from rest_framework import serializers
+    from crud.models import Categoria
+    # agregar los modelos a utilizar
+    class CategoriaSerializer(serializers.ModelSerializer):
+        class Meta:
+            model   = Categoria
+            fields  = ['nombre', 'activo']
+
+
+6.- agregar en ulrs del proyecto, en la urlpatterns, la urls de la app
+    path('api/', include('api.urls'))
+
+7.- crear el archivo urls.py en la app api y agregar temporalmente
+    from django.urls import path
+
+    urlpatterns = []
+
+8.- abrir y crear funcion en views que se ejecutará
+
+9.- agregar la url en el archivo urls.py de la app api
+
+10.- py manage.py runserver  // run
