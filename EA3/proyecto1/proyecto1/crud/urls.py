@@ -4,6 +4,7 @@ from django.urls import path
 urlpatterns = [
     path('categoria', views.categoria , name='categoria'),
     path('categoria/<int:buscarId>/', views.categoriaLeer , name='categoria1'),
+    path('ApiCategoria', views.ApiCategoria , name='ApiCategoria'),
 
     path('crudMarca', views.marca , name='marca'),
     ]

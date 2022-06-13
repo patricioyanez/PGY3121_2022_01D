@@ -1,0 +1,79 @@
+{# comentario si es requerido #}
+{% extends "plantillaBase.html" %}
+{% load static %}
+
+{# definir contenidos de los bloques declarados en la plantilla base #}
+
+{% block tituloPestana %}
+    C.R.U.D. categoria
+{% endblock %}
+{% block titulo %}
+    <h1 class="text-center mt-5">CRUD para Categoría</h1>
+{% endblock %}
+{% block mensajes %}
+{% if exito %}
+    <div class="alert alert-success" role="alert">
+    {{ exito }}
+  </div> 
+{% endif %}
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+    {{ error }}
+  </div> 
+{% endif %}
+{% endblock %}
+{% block contenido %}
+{# #} 
+<script src="{% static 'JavaScript/categoria.js' %}"></script> 
+    <form method="POST" action="{% url 'categoria' %}">
+        {% csrf_token %} 
+        <div class="row mt-4">
+            <div class="col-12 col-md-2 offset-md-3">Nombre</div>
+            <div class="col-12 col-md-5">
+                <input type="hidden"    name="txtId"        class="txtId form-control"     value="{{ item.id }}">
+                <input type="text"      name="txtNombre"    class="txtNombre form-control" value="{{ item.nombre }}">
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-12 col-md-2 offset-md-3">Activo</div>
+            <div class="col-12 col-md-5">
+                <input type="checkbox" name="chkActivo" class="chkActivo" value="1" {% if item.activo %}{{ 'checked' }}{% endif %}>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-2 offset-md-3">Opciones</div>
+            <div class="col-12 col-md-5"> 
+                <button class="btn btn-primary btnGuardar" name="btnGuardar" >Guardar</button>   
+                <button class="btn btn-success btnListar"  name="btnListar"  >Listar</button>   
+                <button class="btn btn-danger btnEliminar" name="btnEliminar">Eliminar</button>
+                <a href="#" class="btn btn-outline-secondary btnLimpiar" >Limpiar</a>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}
+{% block listado %}
+{% if listado %}
+<div class="row justify-content-center">
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Activo</th>
+            <th>Seleccionar</th>
+        </tr>
+    {% for fila in listado %}
+        <tr>
+            <td>{{ fila.id }}</td>
+            <td>{{ fila.nombre }}</td>
+            <td>{{ fila.activo }}</td>
+            <td><a href="{% url 'categoria' %}/{{ fila.id }}/" class="btn btn-warning">Seleccionar</a></td>
+
+        </tr>
+
+    {% endfor %}
+        </table>
+{% endif %}
+</div>
+{% endblock %}

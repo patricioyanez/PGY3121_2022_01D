@@ -45,4 +45,7 @@ def categoriaLeer(request,buscarId):
 def marca(request):
     return render(request, 'marca.html', {})
 
+def ApiCategoria(request):
+    return render(request, 'ApiCategoria.html', {})
+
 
